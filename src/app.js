@@ -100,9 +100,9 @@ app.use(cookieParser());
 app.use(express.json()); // Parse requests of content-type - application/json
 
 // Declare routes
-app.use("/api/v1/users", userRouter);
-app.use("/api/v1/info", infoRouter);
-app.use("/api/v1/blog",blogRouter); // /add /delete /get-all
-app.use("/api/v1/booking",aptRouter); //add /delete /update
+app.use("/users", userRouter); // api/v1 
+app.use("/info", infoRouter);
+app.use("/blog",blogRouter); // /add /delete /get-all
+app.use("/booking",aptRouter); //add /delete /update
 
 export { app, server }; // Export both app and server
