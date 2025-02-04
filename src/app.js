@@ -92,7 +92,7 @@ server.on("upgrade", (request, socket, head) => {
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173", //FIXME: Frontend origin link
+    origin: "https://calm-haven-frontend.vercel.app", //FIXME: Frontend origin link
     credentials: true,
   })
 );
