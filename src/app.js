@@ -90,12 +90,13 @@ server.on("upgrade", (request, socket, head) => {
 });
 
 // Middleware
-app.use(
-  cors({
-    origin: "https://calm-haven-frontend.vercel.app", //FIXME: Frontend origin link
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: 'https://calm-haven-frontend.vercel.app',  
+  credentials: true,  // Allow cookies to be sent
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],  // Allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'],  // Allowed headers
+}));
+
 app.use(cookieParser());
 app.use(express.json()); // Parse requests of content-type - application/json
 
